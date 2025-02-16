@@ -1,2 +1,2 @@
 # opengrad
-A very small autograd Engine inspired by micrograd and tinygrad.
+A small autograd engine and neural net library inspired by micrograd and tinygrad.
