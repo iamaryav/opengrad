@@ -77,6 +77,7 @@ class Value:
         out._backward = _backward
         return out
     
+    # Rectified Linear Unit f(x) = max(0, x)
     def relu(self):
         out = Value(max(0, self.data), (self,), "ReLU")
         def _backward():
