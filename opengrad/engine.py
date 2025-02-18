@@ -1,4 +1,7 @@
+import math
+
 class Value:
+    """ Stores a single scalar value and its gradient """
     def __init__(self, data, _children=(), op='', label=""):
         self.data = data
         self._prev = set(_children)
@@ -79,12 +82,15 @@ class Value:
     
     # Rectified Linear Unit f(x) = max(0, x)
     def relu(self):
-        out = Value(max(0, self.data), (self,), "ReLU")
+        out = Value(0 if self.data < 0 else self.data, (self,), "ReLU")
+
         def _backward():
-            self.grad += (self.data > 0) * out.grad
-        out.backward = _backward
+            self.grad += (out.data > 0) * out.grad
+        out._backward = _backward
 
         return out
+    
+    # Implement Sigmoid & Softmax
 
     
     def backward(self):
