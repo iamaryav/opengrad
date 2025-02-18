@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="opengrad",
-    version="0.1.0",
+    version="0.0.1",
     author="Priya Aryav",
     author_email="priya.aryav@gmail.com",
-    description="A tiny scalar-valued opengrad engine with a small PyTorch-like neural network library on top.",
+    description="A small autograd engine and neural net library",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/iamaryav/opengrad",
